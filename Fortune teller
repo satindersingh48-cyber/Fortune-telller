@@ -1,0 +1,59 @@
+import random
+
+# --- Data for Fortunes ---
+# A list of possible outcomes, advice, or predictions
+FORTUNES = [
+    "A great opportunity will present itself this week.",
+    "Your hard work and dedication will soon pay off.",
+    "A new skill is waiting for you to master it.",
+    "Don't be afraid to take a calculated risk.",
+    "Be open to unexpected changes; they hold a hidden blessing.",
+    "Your strongest asset is your sense of humor today.",
+    "Seek knowledge, and success will follow.",
+    "A long-time friend will bring important news.",
+    "Today is a good day to start a new habit.",
+    "Trust your intuition; it will guide you correctly.",
+]
+
+# --- Core Function ---
+def generate_fortune(user_name):
+    """Selects a random fortune and formats it with the user's name."""
+    
+    # Select a random fortune from the list
+    selected_fortune = random.choice(FORTUNES)
+    
+    # Format the message using the name provided by the user
+    fortune_message = f"🌟 {user_name}, the stars predict: \n\n    '{selected_fortune}'\n"
+    
+    return fortune_message
+
+# --- Main Program Execution ---
+def run_fortune_teller():
+    """Runs the main program, gets user input, and prints the fortune."""
+    
+    print("=" * 45)
+    print("|  ✨ The Personalized Fortune Teller Program ✨  |")
+    print("=" * 45)
+    
+    # **NEW STEP:** Get the name from the user
+    user_name = input("Please enter your name for a personalized reading: ")
+    
+    # Check if the user entered anything
+    if not user_name.strip():
+        user_name = "Future Seeker" # Default name if nothing is entered
+    
+    print(f"\nWelcome, {user_name}!")
+    
+    # Get the generated fortune
+    fortune = generate_fortune(user_name)
+    
+    # Print the result
+    print(fortune)
+    
+    print("-" * 45)
+    print("May your day be filled with luck! 🍀")
+    print("-" * 45)
+
+# This line calls the main function to start the program
+if __name__ == "__main__":
+    run_fortune_teller()
